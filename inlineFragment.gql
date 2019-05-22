@@ -1,0 +1,18 @@
+
+ {
+  github {
+    repo(name: "graphql", ownerUsername: "facebook") {
+      commits {
+        message
+        author {
+          ... on GithubUser {
+            login
+          }
+          ... on GithubCommitAuthor {
+            email
+          }
+        }
+      }
+    }
+  }
+}

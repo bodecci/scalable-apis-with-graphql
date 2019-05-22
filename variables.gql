@@ -1,0 +1,33 @@
+query TestQuery(
+  $currentUserName: String!,
+	$includeRepos: Boolean!
+) {
+  github {
+    user(username: $currentUserName) {
+      githubid: id
+      company
+      avatar_url
+      repos @include(if: $includeRepos) {
+        name
+      }
+    }
+  }
+}
+
+query ListOfCommits {
+  github {
+    repo(name: "graphql", ownerUsername: "facebook") {
+      commits {
+        message
+        date
+      }
+    }
+  }
+}
+
+
+{
+  "currentUserName": "leebyron",
+  "includeRepos" : false
+}
+

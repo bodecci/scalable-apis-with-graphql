@@ -17,3 +17,9 @@ fragment UserInfo on GithubUser {
   company
   avatar_url
 }
+
+
+{
+  "userName1": "leebyron",
+  "userName2" : "dschafer"
+}
