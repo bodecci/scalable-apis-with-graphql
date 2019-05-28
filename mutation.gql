@@ -1,0 +1,4 @@
+# a graphQL mutation is similar to a graphQl query but with runtime awareness 
+# that resolving this mutation will have side effects on some elements of the data
+
+
