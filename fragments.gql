@@ -4,22 +4,16 @@ query TwoUsers (
 ) {
   github {
     user1: user(username: $userName1) {
-        id
-        company
-        avatar_url
-    
+     ...UserInfo
     }
     user2: user(username: $userName2) {
-        id
-        company
-        avatar_url
+      ...UserInfo
     }
   }
 }
 
-
-
-{
-  "userName1": "leebyron",
-  "userName2" : "dschafer"
+fragment UserInfo on GithubUser {
+  id
+  company
+  avatar_url
 }
